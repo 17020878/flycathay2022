@@ -1,5 +1,7 @@
-.container{
-    max-width: 80%;
+@media (min-width: 1200px) {
+    .c, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1140px;
+    }
 }
 .header__main{
     padding-right: 8%;
@@ -28,9 +30,6 @@
 .searchBox_home{
     margin-top: 35px;
 }
-.searchBox__main{
-    box-shadow: 0px 0px 30px rgb(0 0 0 / 15%);
-}
 .colorRed800{
     color: #D20526;
 }
@@ -40,9 +39,7 @@
 .colorNeutral600{
     color: #475569;
 }
-.colorNeutral600{
-    color: #334155;
-}
+
 .typeSearch__box button p:before{
     border-bottom: 2px solid red;
 }
@@ -163,10 +160,25 @@
     padding-bottom: 10px;
     border-bottom: 2px solid #fff;
 }
+.searchBox__tab li.active button:after,.searchBox__tab li:hover button:after{
+    content: "";
+    position: absolute;
+    width: 28px;
+    background: #D20526;
+    left: 0;
+    bottom: -4px;
+    height: 2px;
+}
+.homeBook__form{
+    height: 169px;
+}
+.searchBox__tab li.active span{
+    color: #D20526;
+}
 .searchBox__toggle.active p:after,.searchBox__toggle:hover p:after {
     content: "";
     position: absolute;
-    width: 40px;
+    width: 28px;
     background: #D20526;
     left: 0;
     bottom: -4px;
@@ -179,7 +191,7 @@
     display: flex;
     margin-bottom: 16px;
 }
-.searchBox__add .add__Left, .add_Right {
+.add__Left, .add_Right {
     position: relative;
     width: 27%;
     border-bottom: 1px solid #E2E8F0;
@@ -215,22 +227,16 @@
     margin-right: 20px;
     border-radius: 8px;
 }
-.footerIcon__left{
-    display: flex;
-    align-items: center;
-}
+
 .socialFooter svg{
     margin: 0 15px;
 }
 .footer{
     background-color: #E2E8F0;
 }
-.footerIcon__group{
-    justify-content: space-between;
-    display: flex;
-}
+
 .footer__lang button svg{
-    margin: 0 4px;
+    margin: 0 8px;
 }
 .footer__lang button span{
     margin-right: 10px;
@@ -293,7 +299,7 @@
     background: #fff;
 }
 .homeHighlight__img{
-    height: 220px;
+    height: 17vw;
 }
 .homeHighlight__img img{
     width: 100%;
@@ -309,6 +315,7 @@
 }
 .homeHighlight__group .homeHighlight__col{
     margin-bottom: 24px;
+    height: 25vw;
 }
 .homeHighlight .col-4{
     padding-right: 12px;
@@ -322,7 +329,7 @@
 }
 .homeHighlight__image{
     position: relative;
-    height: 640px;
+    height: calc(50vw + 24px);
 }
 .homeHighlight__card{
     border-radius: 8px;
@@ -344,19 +351,17 @@
     bottom: 0;
     background: linear-gradient(0deg, #000000 -13.45%, rgba(255, 255, 255, 0) 67.25%);
 }
-.homeDestination__group{
-    display: flex;
-}
+
 .homeDes__title{
     font-size: 24px;
     color: #1E293B;
     font-weight: 500;
     margin-bottom: 8px;
 }
-.homeDestination__group li a{
+.homeDestination li a{
     color: #475569;
 }
-.homeDestination__group .col-md-6{
+.homeDestination .col-md-6{
     padding: 8px 0;
     float: left;
 }
@@ -376,6 +381,17 @@
 .homeLetter__title{
     padding: 26px 0;
     text-align: center;
+}
+.colorNeutral700{
+    color: #334155;
+}
+.node__cont{
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+}
+.node__cont svg{
+    margin-right: 8px;
 }
 .navbarBox__title{
     color: #fff;
@@ -401,3 +417,268 @@
 .header__title{
     cursor: pointer;
 }
+.homeServices__text p {
+    font-size: 16px;
+}
+.header__title span{
+    font-size: .92vw;
+}
+
+
+@media (min-width: 767px){
+    .searchBox__main {
+         box-shadow: 0px 0px 30px rgb(0 0 0 / 15%);
+    }
+    .navbarBox__title,.navbarBox__close{
+        display: none;
+    }
+    .footerIcon__group{
+        justify-content: space-between;
+        display: flex;
+    }
+    .footerIcon__left {
+         display: flex;
+         align-items: center;
+    }
+
+}
+
+/*start mobile*/
+@media (max-width: 767px){
+    .header__title{
+        display: none;
+    }
+    .header__group{
+        justify-content: space-between;
+    }
+    .header .header__group > div {
+        width: unset;
+    }
+    .header__group .logo{
+        padding-left: 14px;
+    }
+    .header__main{
+        padding-right: unset;
+    }
+    .header__btn{
+        width: 64px;
+        justify-content: center;
+    }
+    .homeBanner__cont h2{
+        font-size: 48px;
+    }
+    .homeBanner__cont p{
+        font-size: 24px;
+    }
+    .searchBox__main.open{
+        transform: none;
+        visibility: visible;
+    }
+    .searchBox__body{
+        box-shadow: unset;
+    }
+    .searchBox__main{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 100;
+        background-color: #fff;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        transition: all .3s ease-in-out;
+        transform: translateX(-100%);
+        visibility: hidden;
+    }
+    .navbarBox__list.hidden{
+        display: block!important;
+    }
+    .navbarBox__group{
+        height: calc(100% - 80px);
+        position: relative;
+        bottom: 0;
+    }
+    .navbarBox__search{
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+    }
+    .navbarBox__list ul li a{
+        font-size: 16px;
+    }
+    .searchBooking{
+        display: flex;
+        justify-content: space-between;
+        background: #D20526;
+        border-radius: 8px;
+        padding: 16px;
+    }
+    .searchBooking span{
+        font-size: 16px;
+        color: #fff;
+        font-weight: 500;
+    }
+    .homeBook__group{
+        background: #FFFFFF;
+        box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+        padding: 0 16px;
+    }
+    .searchFlight:not(.searchFlight:last-child){
+        border-bottom: 1px solid #F1F5F9;
+    }
+    .searchFlight{
+        display: flex;
+        padding: 18px 0;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .searchFlight span{
+        font-size: 16px;
+        font-weight: 500;
+        color: #475569;
+    }
+    .boxTrip__title{
+        display: flex;
+        align-items: center;
+    }
+    .boxTrip__title svg{
+        margin-right: 10px;
+    }
+    .searchBooking{
+        margin-bottom: 8px;
+    }
+    .homeSearch{
+        position: relative;
+    }
+    .homeBooking{
+        position: absolute;
+        width: 100%;
+        bottom: -34px;
+    }
+    .title1{
+        font-size: 30px;
+    }
+    .homeServices{
+        padding: 36px 0;
+    }
+    .homeServices__col{
+        margin-bottom: 8px;
+    }
+    .homeIntern{
+        margin-top: -30px;
+        margin-bottom: 50px;
+    }
+    .slick-initialized .slick-slide{
+        display: block;
+    }
+    .homeIntern__item{
+        max-width: 100%;
+        margin-right: 0;
+    }
+    .homeLetter__input button{
+        width: 100%;
+        margin-top: 16px;
+    }
+    .homeDestination{
+        margin-bottom: -34px;
+    }
+    .homeIntern__cont p{
+        margin: 12px 0;
+    }
+    .homeIntern__title p{
+        font-size: 18px;
+    }
+    .homeDestination .row{
+        display: block;
+    }
+    .homeDestination ul.col-md-6{
+        float: none;
+        padding: 8px 15px;
+    }
+    .homeDestination li.col-md-6{
+        float: none;
+    }
+    .homeHighlight__img{
+        height: 240px;
+    }
+    .homeIntern__slide{
+        padding-bottom: 40px;
+    }
+    .homeHighlight__slide{
+        margin: 0 -15px;
+        padding-bottom: 40px;
+    }
+    .homeHighlight__col{
+        box-shadow: none;
+        border-radius: unset;
+        background: unset;
+        padding: 15px;
+    }
+    .homeHighlight__item{
+        box-shadow: 0px 0px 8px rgb(0 0 0 / 15%);
+        border-radius: 8px;
+        background: #fff;
+    }
+    .searchBox__input{
+        z-index: unset;
+    }
+    .searchBox__close{
+        text-align: center;
+        align-items: center;
+        padding: 24px;
+        border-bottom: 1px solid #E2E8F0;
+    }
+    .searchBox__close svg{
+        float: left;
+    }
+    .add__Left, .add_Right, .add__Mid {
+        width: 50% !important;
+    }
+    .inputSearch__group{
+        display: block;
+    }
+    .multi .searchBox__passenger{
+        margin-top: 16px;
+        margin-right: 0;
+    }
+    .searchBox__btn{
+        width: 100%;
+    }
+    .noMulti .searchBox__btn{
+        margin-top: 24px;
+    }
+    .footer__top .row{
+        display: block;
+    }
+    .footer__top .row > div{
+        max-width: 100%;
+    }
+    .footer__top .col-4{
+        margin-bottom: 16px;
+    }
+    .footer__list ul:last-child{
+        width: 100%;
+    }
+    .footer__top{
+        margin-bottom: -50px;
+    }
+    .footerIcon__left{
+        text-align: center;
+    }
+    .socialFooter{
+        padding-top: 24px;
+    }
+    .footer__lang button{
+        width: 100%;
+    }
+    .footer__bottom p:first-child{
+        margin-bottom: 16px;
+    }
+    .homeIntern__col{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+/*end mobile*/
