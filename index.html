@@ -1394,6 +1394,7 @@
         $('.header__toggle').click(function () {
           $(this).toggleClass('active');
           $('.navbarBox').toggleClass('open');
+          $('body').toggleClass('no_scroll_body');
         });
         $('.header__title').click(function () {
           var cont_index = $(this).attr('id');
