@@ -65,6 +65,10 @@
 .searchBox__btn{
     width: 220px;
 }
+.no_scroll_body{
+    height: 100%;
+    overflow: hidden;
+}
 .inputSearch__promo{
     margin-right: 16px;
 }
