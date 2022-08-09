@@ -1237,7 +1237,9 @@
             <div class="col-8">
               <div class="footer__list">
                 <ul>
-                  <li class="liTitle text16 medium mb15 colorNeutral800">FlyVietnamAirlines</li>
+                  <p class="liTitle text16 medium mb15 colorNeutral800"><span>FlyVietnamAirlines</span><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="showMobile">
+                    <path d="M1.06254 1.9393L5.43066 7.0368C5.50107 7.11892 5.58841 7.18484 5.68669 7.23003C5.78497 7.27522 5.89186 7.29862 6.00004 7.29862C6.10821 7.29862 6.2151 7.27522 6.31338 7.23003C6.41166 7.18484 6.499 7.11892 6.56941 7.0368L10.9375 1.9393C11.3544 1.45273 11.0088 0.701172 10.3682 0.701172H1.63066C0.990037 0.701172 0.644412 1.45273 1.06254 1.9393Z" fill="black" fill-opacity="0.25"></path>
+                  </svg></p>
                   <li><a href="aboutUs.html">About Us</a></li>
                   <li><a href="termsOfUse.html">Terms of Use</a></li>
                   <li><a href="policy.html">Privacy Policy</a></li>
@@ -1245,7 +1247,9 @@
                   <li><a href="contactUs.html">Contact us</a></li>
                 </ul>
                 <ul>
-                  <li class="liTitle text16 medium mb15 colorNeutral800">Travel Information</li>
+                  <p class="liTitle text16 medium mb15 colorNeutral800"><span>Travel Information</span><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="showMobile">
+                    <path d="M1.06254 1.9393L5.43066 7.0368C5.50107 7.11892 5.58841 7.18484 5.68669 7.23003C5.78497 7.27522 5.89186 7.29862 6.00004 7.29862C6.10821 7.29862 6.2151 7.27522 6.31338 7.23003C6.41166 7.18484 6.499 7.11892 6.56941 7.0368L10.9375 1.9393C11.3544 1.45273 11.0088 0.701172 10.3682 0.701172H1.63066C0.990037 0.701172 0.644412 1.45273 1.06254 1.9393Z" fill="black" fill-opacity="0.25"></path>
+                  </svg></p>
                   <li><a href="newAndUpdate.html">News & Updates</a></li>
                   <li><a href="baggageInfo.html">Baggage Information</a></li>
                   <li><a href="flightRoutes.html">Flight Routes</a></li>
@@ -1253,7 +1257,9 @@
                   <li><a href="favDes.html">Favourite Destinations</a></li>
                 </ul>
                 <ul>
-                  <li class="liTitle text16 medium mb15 colorNeutral800">Manage Booking</li>
+                  <p class="liTitle text16 medium mb15 colorNeutral800"><span>Manage Booking</span><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="showMobile">
+                    <path d="M1.06254 1.9393L5.43066 7.0368C5.50107 7.11892 5.58841 7.18484 5.68669 7.23003C5.78497 7.27522 5.89186 7.29862 6.00004 7.29862C6.10821 7.29862 6.2151 7.27522 6.31338 7.23003C6.41166 7.18484 6.499 7.11892 6.56941 7.0368L10.9375 1.9393C11.3544 1.45273 11.0088 0.701172 10.3682 0.701172H1.63066C0.990037 0.701172 0.644412 1.45273 1.06254 1.9393Z" fill="black" fill-opacity="0.25"></path>
+                  </svg></p>
                   <li><a href="bookingStatus.html">Booking Status</a></li>
                   <li><a href="fareRules.html">Fare Rules</a></li>
                   <li><a href="paymentGuide.html">Payment Guide</a></li>
@@ -1261,7 +1267,9 @@
                   <li><a href="bookingChange.html">Booking Change</a></li>
                 </ul>
                 <ul>
-                  <li class="liTitle text16 medium mb15 colorNeutral800">Extra Services</li>
+                  <p class="liTitle text16 medium mb15 colorNeutral800"><span>Extra Services</span><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="showMobile">
+                    <path d="M1.06254 1.9393L5.43066 7.0368C5.50107 7.11892 5.58841 7.18484 5.68669 7.23003C5.78497 7.27522 5.89186 7.29862 6.00004 7.29862C6.10821 7.29862 6.2151 7.27522 6.31338 7.23003C6.41166 7.18484 6.499 7.11892 6.56941 7.0368L10.9375 1.9393C11.3544 1.45273 11.0088 0.701172 10.3682 0.701172H1.63066C0.990037 0.701172 0.644412 1.45273 1.06254 1.9393Z" fill="black" fill-opacity="0.25"></path>
+                  </svg></p>
                   <li><a href="hotels.html">Hotels</a></li>
                   <li><a href="tours.html">Tours</a></li>
                   <li><a href="carRentals.html">Car Rentals</a></li>
@@ -1427,6 +1435,21 @@
           }
 
         });
+
+        $('.footer__list ul li').slideUp(300);
+        $(".liTitle").click(function () {
+          if($(this).hasClass('active')){
+            $(this).removeClass('active');
+            $(this).parent().find('li').slideUp(300);
+          }else {
+            $('.liTitle').remove('active');
+            $('.footer__list ul li').slideUp(300);
+            $(this).addClass('active');
+            $(this).parent().find('li').slideDown(300);
+          }
+
+        });
+
       };
       $(".navbarBox__close, .navbarBox__backdrop").click(function () {
         $('.navbarBox').removeClass('open');
